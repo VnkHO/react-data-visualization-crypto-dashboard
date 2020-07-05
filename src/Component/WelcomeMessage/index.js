@@ -1,7 +1,16 @@
 import React from 'react'
+import {AppContext} from '../../Provider/AppProvider'
 
-const WelcomeMessage = () => {
-  return <h1>Welcome Message</h1>
+export default function ({firstVisit}) {
+  return (
+    <AppContext.Consumer>
+      {({firstVisit}) =>
+        firstVisit ? (
+          <div>
+            Welcome to CryptoDash, please select your favorite coins to begin.
+          </div>
+        ) : null
+      }
+    </AppContext.Consumer>
+  )
 }
-
-export default WelcomeMessage

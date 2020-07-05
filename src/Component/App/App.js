@@ -2,9 +2,10 @@ import React from 'react'
 
 import {AppProvider} from '../../Provider/AppProvider'
 
-import WelcomeMessage from '../WelcomeMessage'
 import AppLayout from '../AppLayout'
 import AppBar from '../AppBar'
+
+import Settings from '../Settings'
 
 import './App.css'
 
@@ -13,7 +14,7 @@ function App() {
     <AppLayout>
       <AppProvider>
         <AppBar />
-        <WelcomeMessage />
+        <Settings />
       </AppProvider>
     </AppLayout>
   )
