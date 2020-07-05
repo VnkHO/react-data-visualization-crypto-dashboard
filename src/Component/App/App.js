@@ -1,9 +1,18 @@
 import React from 'react'
 
+import WelcomeMessage from '../WelcomeMessage'
+import AppLayout from '../AppLayout'
+import AppBar from '../AppBar'
+
 import './App.css'
 
 function App() {
-  return <div className="App"></div>
+  return (
+    <AppLayout>
+      <AppBar />
+      <WelcomeMessage />
+    </AppLayout>
+  )
 }
 
 export default App
