@@ -1,7 +1,6 @@
 import React from 'react'
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import {AppContext} from '../../../Provider/AppProvider'
-import {SelectableTile} from '../../Shared/Tile'
 import CoinTile from '../CoinTile'
 
 export const CoinGridStyled = styled.div`

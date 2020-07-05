@@ -9,7 +9,11 @@ const Logo = styled.div`
 const Bar = styled.div`
   display: grid;
   margin-bottom: 4rem;
-  grid-template-columns: 8rem auto 8rem 8rem;
+  grid-template-columns: 8rem auto 8rem 8rem 8rem;
+  & div {
+    text-align: center;
+    cursor: pointer;
+  }
 `
 
 const ControlButtonElem = styled.div`
@@ -18,6 +22,12 @@ const ControlButtonElem = styled.div`
     props.active &&
     css`
       text-shadow: 0px 0px 6rem #03ff03;
+    `}
+  ${(props) =>
+    props.hidden &&
+    css`
+      display: none;
+      visibility: hidden;
     `}
 `
 
@@ -28,11 +38,12 @@ function toProperCase(lower) {
 function ControlButton({name, active}) {
   return (
     <AppContext.Consumer>
-      {({page, setPage}) => {
+      {({firstVisit, page, setPage}) => {
         return (
           <ControlButtonElem
             active={page === name}
             onClick={() => setPage(name)}
+            hidden={firstVisit && name === 'dashboard'}
           >
             {toProperCase(name)}
           </ControlButtonElem>
@@ -44,11 +55,18 @@ function ControlButton({name, active}) {
 
 export default function () {
   return (
-    <Bar>
-      <Logo>CryptoDash </Logo>
-      <div />
-      <ControlButton active name={'dashboard'} />
-      <ControlButton name={'settings'} />
-    </Bar>
+    <AppContext.Consumer>
+      {({isDark, setIsDark}) => (
+        <Bar>
+          <Logo>CryptoDash </Logo>
+          <div />
+          <ControlButton active name={'dashboard'} />
+          <ControlButton name={'settings'} />
+          {/* <div onClick={setIsDark}>{`${toProperCase(
+            `${isDark ? 'dark' : 'light'}`,
+          )} mode`}</div> */}
+        </Bar>
+      )}
+    </AppContext.Consumer>
   )
 }

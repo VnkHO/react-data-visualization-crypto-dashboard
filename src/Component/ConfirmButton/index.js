@@ -3,11 +3,11 @@ import styled from 'styled-components'
 
 import {AppContext} from '../../Provider/AppProvider'
 
-import {fontSize1, greenBoxShadow, color3} from '../Shared/Styles'
+import {fontSize1, greenBoxShadow} from '../Shared/Styles'
 
 const ConfirmButtonStyled = styled.div`
   margin: 2rem;
-  color: ${color3};
+  color: ${(props) => (!props.isDark ? '#42ff3a' : '#09f010')};
 
   ${fontSize1};
   padding: 0.5rem;
@@ -25,9 +25,9 @@ export const CenterDiv = styled.div`
 const ConfirmButton = () => {
   return (
     <AppContext.Consumer>
-      {({confirmFavorites}) => (
+      {({confirmFavorites, isDark}) => (
         <CenterDiv>
-          <ConfirmButtonStyled onClick={confirmFavorites}>
+          <ConfirmButtonStyled isDark={isDark} onClick={confirmFavorites}>
             Confirm Favorites
           </ConfirmButtonStyled>
         </CenterDiv>

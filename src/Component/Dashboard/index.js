@@ -9,7 +9,10 @@ const ChartGrid = styled.div`
   display: grid;
   margin-top: 2rem;
   grid-gap: 1.5rem;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: fit-content;
+  @media (min-width: 64em) {
+    grid-template-columns: 1fr 3fr;
+  }
 `
 
 const Dashboard = () => {
