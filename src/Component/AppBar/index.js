@@ -9,7 +9,7 @@ const Logo = styled.div`
 const Bar = styled.div`
   display: grid;
   margin-bottom: 4rem;
-  grid-template-columns: 8rem auto 8rem 8rem 8rem;
+  grid-template-columns: 8rem auto 8rem 8rem;
   & div {
     text-align: center;
     cursor: pointer;
