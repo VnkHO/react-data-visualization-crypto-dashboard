@@ -33,7 +33,7 @@ export default function ({topSection}) {
             favorites,
             filteredCoins,
           ).map((coinKey, index) => (
-            <CoinTile key={index} topSection={topSection} coinKey={coinKey} />
+            <CoinTile key={coinKey} topSection={topSection} coinKey={coinKey} />
           ))}
         </CoinGridStyled>
       )}
