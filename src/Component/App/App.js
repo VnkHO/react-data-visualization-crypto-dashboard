@@ -6,6 +6,7 @@ import AppLayout from '../AppLayout'
 import AppBar from '../AppBar'
 
 import Settings from '../Settings'
+import Content from '../Shared/Content'
 
 import './App.css'
 
@@ -14,7 +15,9 @@ function App() {
     <AppLayout>
       <AppProvider>
         <AppBar />
-        <Settings />
+        <Content>
+          <Settings />
+        </Content>
       </AppProvider>
     </AppLayout>
   )
